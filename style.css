@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    background-color: #c600;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 1rem;
+    
+}
+
+
+/* --nav-- */
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: #333;
+}
+
+.brand-title {
+    font-size: 2.1rem;
+    margin: .2rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.navbar-links li a:hover {
+    color: white;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #555;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+        
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+        
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+/* ---main */
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.panels {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.panel {
+    background-color: #6b0f9c;
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, .2);
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    transition: background .2s, flex .7s cubic-bezier(0.61, -0.19, 0.7, -0.11), font-size .7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
+    font-size: 20px;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel1 {
+    background-image: url('https://cdn.pixabay.com/photo/2020/01/21/13/23/freedom-4782870_960_720.jpg');
+}
+
+.panel2 {
+    background-image: url('https://cdn.pixabay.com/photo/2021/02/08/20/24/lake-5996427_960_720.jpg');
+}
+
+.panel3 {
+    background-image: url('https://cdn.pixabay.com/photo/2020/11/26/15/28/woman-5779323_960_720.jpg');
+}
+
+.panel4 {
+    background-image: url('https://cdn.pixabay.com/photo/2021/02/09/09/03/dog-5997842_960_720.jpg');
+}
+
+.panel5 {
+    background-image: url('https://cdn.pixabay.com/photo/2018/12/21/11/55/lake-duszatynskie-3887777_960_720.jpg');
+}
+
+/* flex children */
+.panel > * {
+    margin: 0;
+    width: 100%;
+    transition: transform .5s;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel > *:first-child {
+    transform: translateY(-100%);
+}
+
+.panel.open-active > *:first-child {
+    transform: translateY(0);
+}
+
+.panel > *:last-child {
+    transform: translateY(100%);
+}
+
+.panel.open-active > *:last-child {
+    transform: translateY(0);
+}
+
+.panel p {
+    text-transform: uppercase;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    /* font-family: 'Shadows Into Light Two', cursive; */
+    text-shadow: 0 0 4px rgba(0, 0, 0, .7), 0 0 14px rgba(0, 0, 0, .45);
+    font-size: 2em;
+}
+
+.panel p:nth-child(2) {
+    font-size: 3em;
+}
+
+
+p:nth-child(2):hover {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.panel.open {
+    flex: 5;
+    font-size: 40px;
+}
+
+.cta {
+    color: #fff;
+    text-decoration: none;
+}
+
+ /* ---footer--- */
+ footer {
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.3rem;
+    text-align: center;
+    border-top: 1px solid rgb(73, 73, 73);
+    background-color: #fff;
+    color: #333;
+}
